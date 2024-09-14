@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2757873664868951532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7691835239953669175}
+  - component: {fileID: 3805598122216890643}
+  m_Layer: 0
+  m_Name: FXAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7691835239953669175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757873664868951532}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3805598122216890643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757873664868951532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c822d3feb7ac70842946db6a6afa1628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClips:
+  - name: CharWalkClip
+    clip: {fileID: 8300000, guid: 085e8948175b93440a7261ae5117190d, type: 3}
+    loop: 1
+    clipVolume: 0.5
+  - name: CharRunClip
+    clip: {fileID: 8300000, guid: 218b1cc74aa7baf4cbe9eee14cec0500, type: 3}
+    loop: 1
+    clipVolume: 0.5
+  - name: CharJumpClip
+    clip: {fileID: 8300000, guid: 48f6d81fae848ae45920a94441b19ce2, type: 3}
+    loop: 0
+    clipVolume: 0.4
+  - name: CharAttackClip
+    clip: {fileID: 8300000, guid: 85d2ef329d84cc94a9195797776f4610, type: 3}
+    loop: 0
+    clipVolume: 1
+  - name: CharDashClip
+    clip: {fileID: 8300000, guid: 48f6d81fae848ae45920a94441b19ce2, type: 3}
+    loop: 0
+    clipVolume: 0.4
+  - name: CharOnDMGClip
+    clip: {fileID: 8300000, guid: dda9a00661c508d46a5518729f88341a, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: CharDeadClip
+    clip: {fileID: 8300000, guid: dda9a00661c508d46a5518729f88341a, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: RunSpiderWanderClip
+    clip: {fileID: 8300000, guid: 84e8a3ddfe70e2b49a9e17a87e18274e, type: 3}
+    loop: 1
+    clipVolume: 0.2
+  - name: RunSpiderChaseClip
+    clip: {fileID: 8300000, guid: 1e85391242dac0a4aa1d00ebcbb0fe37, type: 3}
+    loop: 1
+    clipVolume: 1
+  - name: RunSpiderDashClip
+    clip: {fileID: 8300000, guid: 942a5874e1b0bc9449e3661b1f5b17f9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: RunSpiderOnDMGClip
+    clip: {fileID: 8300000, guid: ca94cbccaa563ad49a15180fbe6b64a9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: RunSpiderDeadClip
+    clip: {fileID: 8300000, guid: 0e3f4ea5304cfdb4fadf76e8f20a2f83, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: JumpSpiderJumpClip
+    clip: {fileID: 8300000, guid: 48f6d81fae848ae45920a94441b19ce2, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: JumpSpiderFallClip
+    clip: {fileID: 8300000, guid: 942a5874e1b0bc9449e3661b1f5b17f9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: JumpSpiderOnDMGClip
+    clip: {fileID: 8300000, guid: ca94cbccaa563ad49a15180fbe6b64a9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: JumpSpiderDeadClip
+    clip: {fileID: 8300000, guid: 0e3f4ea5304cfdb4fadf76e8f20a2f83, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: ClimbSpiderOnDMGClip
+    clip: {fileID: 8300000, guid: ca94cbccaa563ad49a15180fbe6b64a9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: ClimbSpiderDeadClip
+    clip: {fileID: 8300000, guid: 0e3f4ea5304cfdb4fadf76e8f20a2f83, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: ClimbSpiderAttackClip
+    clip: {fileID: 8300000, guid: 942a5874e1b0bc9449e3661b1f5b17f9, type: 3}
+    loop: 0
+    clipVolume: 0.2
+  - name: ClimSpiderBulletClip
+    clip: {fileID: 8300000, guid: 5667cb5e9162e024ba1f07cd9c95db13, type: 3}
+    loop: 0
+    clipVolume: 0.3
+  - name: CoinClip
+    clip: {fileID: 8300000, guid: 3043b67f7dfc84a49bdde21e6b4c7cc2, type: 3}
+    loop: 0
+    clipVolume: 0.3
+  _globalVolume: 1

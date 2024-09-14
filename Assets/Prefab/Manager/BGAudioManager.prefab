@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7095366984447479016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9171855292186422830}
+  - component: {fileID: 6661977239998339811}
+  m_Layer: 0
+  m_Name: BGAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9171855292186422830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095366984447479016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6661977239998339811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095366984447479016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499a54aa4f215df4b9931549cc0662c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgAudioClips:
+  - name: MainMenuClip
+    clip: {fileID: 8300000, guid: 439a9eee43c370e42906b19077d26a6c, type: 3}
+    loop: 1
+    clipVolume: 1
+  - name: VillageClip
+    clip: {fileID: 8300000, guid: f050037a4993d9540bde567858b0cf50, type: 3}
+    loop: 1
+    clipVolume: 1
+  - name: FieldClip
+    clip: {fileID: 8300000, guid: 0b087069a0aaf51448ea1207c3acf67d, type: 3}
+    loop: 1
+    clipVolume: 1
+  - name: FightClip
+    clip: {fileID: 8300000, guid: 2d03fac15b513d34cab0c503bb4cea32, type: 3}
+    loop: 1
+    clipVolume: 1
+  _globalVolume: 1
+  _currentState: 0

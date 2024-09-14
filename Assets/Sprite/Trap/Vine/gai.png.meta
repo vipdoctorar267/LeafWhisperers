@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 4c93034a6f28b074ea5ccd763c9ecf02
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gai_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 609
+        width: 151
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e500bcd44e5bbf409e20774c636e9b9
+      internalID: 1554470445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_1
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 406
+        width: 260
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 105, y: -15.5}
+        - {x: 78, y: -47.5}
+        - {x: 31, y: -51.5}
+        - {x: -5, y: -13.5}
+        - {x: -34, y: 11.5}
+        - {x: -69, y: 17.5}
+        - {x: -100, y: 6.5}
+        - {x: -118, y: -22.5}
+        - {x: -114, y: -84.5}
+        - {x: -95, y: -94.5}
+        - {x: -21, y: -93.5}
+        - {x: -7, y: -106.5}
+        - {x: 0, y: -112.5}
+        - {x: 109, y: -112.5}
+        - {x: 130, y: -110.5}
+        - {x: 129, y: -16.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca0557431012ad4085c5f0951327204
+      internalID: 108509087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 546
+        width: 160
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b86f2df0ba1c684b856337648775909
+      internalID: 1935075616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 469
+        width: 255
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c420b2fe256c64cb47d7f08d5296c8
+      internalID: 977283617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 413
+        width: 240
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 66, y: 15.5}
+        - {x: 17, y: 1.5}
+        - {x: -13, y: -8.5}
+        - {x: -39, y: 1.5}
+        - {x: -80, y: 23.5}
+        - {x: -105, y: 14.5}
+        - {x: -112, y: 5.5}
+        - {x: -94, y: -22.5}
+        - {x: -100, y: -38.5}
+        - {x: -59, y: -37.5}
+        - {x: 30, y: -43.5}
+        - {x: 87, y: -16.5}
+        - {x: 107, y: 6.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbbd699130309140ad05134730bca3c
+      internalID: 149798192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 392
+        width: 244
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3df481265ae5f499d8c1a76bcbbeb4
+      internalID: 1383895048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 313
+        width: 255
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef0a690b3b1a944f9c8ead7765bfd75
+      internalID: -928341553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 232
+        width: 355
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 172.5, y: -14}
+        - {x: 110.5, y: 2}
+        - {x: 96.5, y: 30}
+        - {x: 58.5, y: 44}
+        - {x: 12.5, y: 37}
+        - {x: -40.5, y: 66}
+        - {x: -73.5, y: 57}
+        - {x: -122.5, y: 20}
+        - {x: -155.5, y: -7}
+        - {x: -168.5, y: -45}
+        - {x: -122.5, y: -20}
+        - {x: -76.5, y: -20}
+        - {x: -41.5, y: -68}
+        - {x: -15.5, y: -55}
+        - {x: 4.5, y: -71}
+        - {x: 39.5, y: -73}
+        - {x: 59.5, y: -42}
+        - {x: 87.5, y: -24}
+        - {x: 129.5, y: -26}
+        - {x: 164.5, y: -39}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1039ed68e7e99914bb9bfecb069b588a
+      internalID: 345309980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_9
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 252
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35, y: -11}
+        - {x: 30, y: 5}
+        - {x: 20, y: 27}
+        - {x: 7, y: 37}
+        - {x: -10, y: 24}
+        - {x: -29, y: -10}
+        - {x: -56, y: -31}
+        - {x: -55, y: -46}
+        - {x: -36, y: -52}
+        - {x: -19, y: -58}
+        - {x: 5, y: -47}
+        - {x: 41, y: -37}
+        - {x: 58, y: -46}
+        - {x: 47, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23323e13e108b64ab11d4e97ae89f9f
+      internalID: -2112092715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 210
+        width: 293
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f97d7f113450648a4fdb0d73b2d0e7
+      internalID: 504326854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 123
+        width: 195
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b2f96c14ed261499129de804da4f89
+      internalID: 192774839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gai_12
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 48
+        width: 258
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42c7d1b3e28c414ba2108288ed2cbb2
+      internalID: 1836432922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      gai_0: 1554470445
+      gai_1: 108509087
+      gai_10: 504326854
+      gai_11: 192774839
+      gai_12: 1836432922
+      gai_2: 1935075616
+      gai_3: 977283617
+      gai_4: 149798192
+      gai_5: 1383895048
+      gai_6: 209380288
+      gai_7: -928341553
+      gai_8: 345309980
+      gai_9: -2112092715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

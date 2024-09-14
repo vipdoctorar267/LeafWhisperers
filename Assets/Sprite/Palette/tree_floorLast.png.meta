@@ -1,0 +1,1113 @@
+fileFormatVersion: 2
+guid: 1c48c2754cf180d44bccb970e45bfd88
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tree_floorLast_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 4092
+        width: 251
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55c287193d50f4445892ff7507ef067a
+      internalID: 481778915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_1
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 4093
+        width: 236
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39983ab2f9700cc46ae1160dc6407cf0
+      internalID: 1240815482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_2
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 4089
+        width: 242
+        height: 229
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071f3f3ac5d83724eb9893a2f2b2b5e2
+      internalID: -15943563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_3
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 4103
+        width: 104
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced9f2a308d861142b0de9f71be40001
+      internalID: 1942958679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_4
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 4096
+        width: 104
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c617ee780295a6042b17d097249bd7d3
+      internalID: -1645169212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_5
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 4093
+        width: 110
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d376a5bf7705fc049adb2fbe193ce991
+      internalID: 1024378018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_6
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 4079
+        width: 100
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb9bba3b70bb45428e7cd1be3893e24
+      internalID: -221585078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_7
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 4083
+        width: 107
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c47c183c4cd25d4b9e317cac8068508
+      internalID: 1532198440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_8
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 4061
+        width: 218
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70dbec17b22b8d41baa32b142c9aa64
+      internalID: 740489055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_9
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 4072
+        width: 222
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255843ce003211f4eabb2a298bb5cce3
+      internalID: 1689709476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_10
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 4013
+        width: 1053
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -480.15723, y: 29.2229}
+        - {x: -524.4702, y: 13.919678}
+        - {x: -526.5, y: -48}
+        - {x: -446.46533, y: -8.732666}
+        - {x: 485.9082, y: -13.220703}
+        - {x: 520.4114, y: 21.697266}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b1cde7650690d4598e0de41659c3a5
+      internalID: -2006208243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 3787
+        width: 575
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f7e010279c0f64db02527f96b71d8c
+      internalID: -1138056464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_12
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 3701
+        width: 298
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3563103cf68229549ae196f547e1b029
+      internalID: 1612929513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_13
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 3853
+        width: 416
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2587ee704f5d2474d8b4ce97629a8ff1
+      internalID: 1474623209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_14
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 3846
+        width: 412
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa49d7453c8f6a74585195ba0a3ea818
+      internalID: 596159041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_15
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 3832
+        width: 222
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdf671a88a046847bc6a5e3facf797a
+      internalID: -1348958496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_16
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 3531
+        width: 1206
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -387.75464, y: 180.14307}
+        - {x: -506.95972, y: 59.07202}
+        - {x: -575.29614, y: -111.72998}
+        - {x: -497.4087, y: -189.61523}
+        - {x: -284.19897, y: -84.34033}
+        - {x: -144.17163, y: 18.86499}
+        - {x: -257.25024, y: 135.37915}
+        - {x: 558.41235, y: 140.98975}
+        - {x: 571.3406, y: 174.6023}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a0fe7c15b2f7f4aa7a1de12a010f23
+      internalID: -267245489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_17
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 3494
+        width: 574
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6600e880581988f4bbef3454edc700f8
+      internalID: -1234332838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_18
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 3687
+        width: 298
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b347ce5db4cfc3548a0d74182c1a857d
+      internalID: -359633826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_19
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 3701
+        width: 307
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea2512fa3601b64eb17cee419576ad3
+      internalID: 1804252845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_21
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 3513
+        width: 294
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50846d6a9163d084ca73fbc5a13d1d81
+      internalID: 856294750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_22
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 3479
+        width: 291
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a516f80b45682b4dac6f7fe317f9fc4
+      internalID: -1344074642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_23
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 3507
+        width: 284
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2108680cc3fecb4bb07b5e5e77efb73
+      internalID: -437368462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_24
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 3468
+        width: 214
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b835643857c0914db7b12839613956f
+      internalID: -1335869535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_25
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 3163
+        width: 949
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 197.49902, y: 124.19385}
+        - {x: -101.93091, y: 70.767334}
+        - {x: -453.26172, y: -49.313965}
+        - {x: -425.3872, y: -105.28613}
+        - {x: -315.56323, y: -170.73975}
+        - {x: 62.578857, y: -87.11597}
+        - {x: 182.95117, y: -85.346924}
+        - {x: 455.91724, y: 84.19849}
+        - {x: 410.4065, y: 108.07544}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43edcaf213d94464cb43693f7df95199
+      internalID: -1880262242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_26
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 3223
+        width: 481
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505f611545568654386420c1b9b60cf9
+      internalID: -619529231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_27
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 3233
+        width: 422
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5fa52d86e912d4492c1772042deb10
+      internalID: -1641801138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_28
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 3222
+        width: 423
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8936ea6cf095de4cb69334dbaf04bbb
+      internalID: 1340345284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_29
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 3215
+        width: 228
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8a45d9a447ba34cb628cff5de646fc
+      internalID: -1467629421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_30
+      rect:
+        serializedVersion: 2
+        x: 3911
+        y: 2777
+        width: 2915
+        height: 709
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -888.20264, y: 177.45581}
+        - {x: -1178.7109, y: 102.34375}
+        - {x: -1228.8926, y: -82.21704}
+        - {x: -1030.751, y: -185.2268}
+        - {x: -717.92334, y: -250.78491}
+        - {x: -485.1709, y: -269.92407}
+        - {x: -96.50049, y: -224.84424}
+        - {x: 145.31787, y: -106.110596}
+        - {x: 968.333, y: -155.51343}
+        - {x: 1224.1494, y: -130.74634}
+        - {x: 1385.2598, y: 81.05298}
+        - {x: 1297.4844, y: 201.22656}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309ca919d809f474aaa170fe420aa86d
+      internalID: -1846178100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_31
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 2799
+        width: 925
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 308.0653, y: 102.62793}
+        - {x: 194.29834, y: 59.029785}
+        - {x: 34.273193, y: 45.44873}
+        - {x: -64.02173, y: 90.16626}
+        - {x: -437.4267, y: 139.84302}
+        - {x: -462.2651, y: -59.223587}
+        - {x: -150.38524, y: -184}
+        - {x: 424.85986, y: -184}
+        - {x: 462.5, y: -145.88895}
+        - {x: 451.46063, y: 104.61597}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24266a9acb629a1468993dfb7a1ec4a5
+      internalID: -184431441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_32
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2744
+        width: 1008
+        height: 423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 385.328, y: 65.22998}
+        - {x: 200.61145, y: 138.83984}
+        - {x: -12.508789, y: 162.2395}
+        - {x: -234.74512, y: 125.14917}
+        - {x: -418.1222, y: 76.2688}
+        - {x: -473.31873, y: 8.184814}
+        - {x: -288.4319, y: -17.394531}
+        - {x: -127.097046, y: -147.10596}
+        - {x: 132.18018, y: -82.14917}
+        - {x: 447.42188, y: -78.850586}
+        - {x: 504, y: 20.974457}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f44334173bbd9144b1704f7397b9844
+      internalID: 692333488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_33
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 2806
+        width: 849
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 180.39722, y: 114.57373}
+        - {x: -85.86694, y: 67.09131}
+        - {x: -396.62524, y: 56.69165}
+        - {x: -324.61572, y: -6.7805176}
+        - {x: -160.23682, y: 13.3359375}
+        - {x: -59.81543, y: -128.51099}
+        - {x: 162.8042, y: -107.60498}
+        - {x: 356.74878, y: -62.965088}
+        - {x: 412.88574, y: -19.325928}
+        - {x: 378.04248, y: 114.57373}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48ec126cc0e74b409d0455757433be8
+      internalID: -425150904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_34
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1914
+        width: 2465
+        height: 732
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 685.10474, y: 206.93018}
+        - {x: -926.2037, y: 220.15405}
+        - {x: -1141.6653, y: 143.2024}
+        - {x: -1097.5847, y: -120.94678}
+        - {x: -755.18005, y: -186.60132}
+        - {x: -492.2771, y: -266.22192}
+        - {x: 260.0199, y: -221.86572}
+        - {x: 828.1011, y: -192.14526}
+        - {x: 1141.709, y: -107.03616}
+        - {x: 1057.9558, y: 84.05884}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8bd7a2b7dd95c4bbe6a2ea54fc128b
+      internalID: -1155796595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_35
+      rect:
+        serializedVersion: 2
+        x: 3204
+        y: 2245
+        width: 2206
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 821, y: -20.5}
+        - {x: 227, y: 50.5}
+        - {x: -537, y: 89.5}
+        - {x: -925, y: 67.5}
+        - {x: -913, y: 12.5}
+        - {x: -758, y: -138.5}
+        - {x: 872, y: -185.5}
+        - {x: 950, y: -81.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20d1057e785a9046ba13411e5ae229a
+      internalID: -941858959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_66
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 293
+        width: 3830
+        height: 1649
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 985.21924, y: 430.5631}
+        - {x: 521.0923, y: 285.96863}
+        - {x: 141.23389, y: 278.2328}
+        - {x: -446.64893, y: 448.99414}
+        - {x: -1807, y: 494.5}
+        - {x: -1496, y: 289.5}
+        - {x: -1228.3706, y: 17.693848}
+        - {x: -855.98486, y: -652.4578}
+        - {x: 1453.2148, y: -636.11694}
+        - {x: 1677.8696, y: -446.93542}
+        - {x: 1783.6519, y: -100.03131}
+        - {x: 1536.0513, y: 11.000488}
+        - {x: 1407.2588, y: 175.68506}
+        - {x: 1695.4658, y: 231.93628}
+        - {x: 1706.6782, y: 493.6089}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45005e714bbda447bf3d5b1fc57632a
+      internalID: -1620537697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_floorLast_77
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 409
+        width: 3132
+        height: 1161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1473.4495, y: -221.92383}
+        - {x: 1286.3215, y: -277.38968}
+        - {x: 1220.4802, y: -52.05973}
+        - {x: 1473.4495, y: 239.13588}
+        - {x: 1473.4495, y: 367.4006}
+        - {x: 1407.6082, y: 502.59857}
+        - {x: 1258.8784, y: 444.35242}
+        - {x: 1019.1333, y: 341.9381}
+        - {x: 780.02563, y: 401.16943}
+        - {x: 421.21106, y: 385.71912}
+        - {x: 164.61389, y: 308.42993}
+        - {x: -103.66028, y: 326.53162}
+        - {x: -306.50903, y: 364.3214}
+        - {x: -775.60315, y: 391.06836}
+        - {x: -1047.1213, y: 394.87854}
+        - {x: -1330.6672, y: 416.91882}
+        - {x: -1451.2908, y: 374.33383}
+        - {x: -1427.0334, y: 318.868}
+        - {x: -1271.0935, y: 183.67004}
+        - {x: -1246.8362, y: 34.60563}
+        - {x: -1077.0349, y: 76.205}
+        - {x: -1042.3816, y: -138.72508}
+        - {x: -1174.0642, y: -280.8563}
+        - {x: -1198.3215, y: -377.92148}
+        - {x: -1080.5002, y: -429.9207}
+        - {x: -990.40155, y: -395.25455}
+        - {x: -716.6403, y: -481.91992}
+        - {x: -512.1857, y: -485.38654}
+        - {x: -61.692596, y: -513.11945}
+        - {x: 648.70044, y: -513.11945}
+        - {x: 925.927, y: -471.52008}
+        - {x: 1293.2522, y: -447.25378}
+        - {x: 1473.4495, y: -412.58762}
+      tessellationDetail: 0.07
+      bones: []
+      spriteID: a5fa5166f1249dc4687968b26570609b
+      internalID: 1119474357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tree_floorLast_0: 481778915
+      tree_floorLast_1: 1240815482
+      tree_floorLast_10: -2006208243
+      tree_floorLast_11: -1138056464
+      tree_floorLast_12: 1612929513
+      tree_floorLast_13: 1474623209
+      tree_floorLast_14: 596159041
+      tree_floorLast_15: -1348958496
+      tree_floorLast_16: -267245489
+      tree_floorLast_17: -1234332838
+      tree_floorLast_18: -359633826
+      tree_floorLast_19: 1804252845
+      tree_floorLast_2: -15943563
+      tree_floorLast_20: -404594409
+      tree_floorLast_21: 856294750
+      tree_floorLast_22: -1344074642
+      tree_floorLast_23: -437368462
+      tree_floorLast_24: -1335869535
+      tree_floorLast_25: -1880262242
+      tree_floorLast_26: -619529231
+      tree_floorLast_27: -1641801138
+      tree_floorLast_28: 1340345284
+      tree_floorLast_29: -1467629421
+      tree_floorLast_3: 1942958679
+      tree_floorLast_30: -1846178100
+      tree_floorLast_31: -184431441
+      tree_floorLast_32: 692333488
+      tree_floorLast_33: -425150904
+      tree_floorLast_34: -1155796595
+      tree_floorLast_35: -941858959
+      tree_floorLast_36: -1294943207
+      tree_floorLast_37: -158226380
+      tree_floorLast_38: 1891367589
+      tree_floorLast_39: -1233499492
+      tree_floorLast_4: -1645169212
+      tree_floorLast_40: 60307051
+      tree_floorLast_41: -337123122
+      tree_floorLast_42: 2006290803
+      tree_floorLast_43: -1614298698
+      tree_floorLast_44: 115424170
+      tree_floorLast_45: -471439641
+      tree_floorLast_46: -231764626
+      tree_floorLast_47: -1457713599
+      tree_floorLast_48: -137261370
+      tree_floorLast_49: 1322315272
+      tree_floorLast_5: 1024378018
+      tree_floorLast_50: -1382103612
+      tree_floorLast_51: -2382997
+      tree_floorLast_52: 990086582
+      tree_floorLast_53: 1802180165
+      tree_floorLast_54: -601684191
+      tree_floorLast_55: -1563992959
+      tree_floorLast_56: 884155450
+      tree_floorLast_57: -95264617
+      tree_floorLast_58: 2053019150
+      tree_floorLast_59: -875896861
+      tree_floorLast_6: -221585078
+      tree_floorLast_60: -1880035218
+      tree_floorLast_61: 1540766026
+      tree_floorLast_62: 1647550950
+      tree_floorLast_63: 2059082824
+      tree_floorLast_64: -709735599
+      tree_floorLast_65: 111669469
+      tree_floorLast_66: -1620537697
+      tree_floorLast_67: -1838526628
+      tree_floorLast_68: -83655569
+      tree_floorLast_69: 271330236
+      tree_floorLast_7: 1532198440
+      tree_floorLast_70: -1000415178
+      tree_floorLast_71: -1903369247
+      tree_floorLast_72: -1890381240
+      tree_floorLast_73: -668347921
+      tree_floorLast_74: -1415207575
+      tree_floorLast_75: 1286196723
+      tree_floorLast_76: -591163822
+      tree_floorLast_77: 1119474357
+      tree_floorLast_78: -322806651
+      tree_floorLast_79: 301754456
+      tree_floorLast_8: 740489055
+      tree_floorLast_80: -1627879529
+      tree_floorLast_81: -945222714
+      tree_floorLast_82: 1264490830
+      tree_floorLast_83: 1713100995
+      tree_floorLast_84: 1440832944
+      tree_floorLast_85: -1774323347
+      tree_floorLast_86: -2143778718
+      tree_floorLast_87: 2010929545
+      tree_floorLast_88: 1105076671
+      tree_floorLast_9: 1689709476
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

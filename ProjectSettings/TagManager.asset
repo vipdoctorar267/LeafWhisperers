@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Enemy
+  - Attack01Area
+  - SoundRange
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - Ground
+  - LWall
+  - RWall
+  - Enemy
+  - Trap
+  - BackGround
+  - WallBackGround
+  - GroundFront
+  - GroundBack
+  - MapCheck
+  - WorldSpaceUI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 3187798485
+    locked: 0
+  - name: WallBackGround
+    uniqueID: 1107782921
+    locked: 0
+  - name: MainTree
+    uniqueID: 49206557
+    locked: 0
+  - name: Ground_Back
+    uniqueID: 460936075
+    locked: 0
+  - name: Celling
+    uniqueID: 1923089195
+    locked: 0
+  - name: Teleport
+    uniqueID: 1495196925
+    locked: 0
+  - name: Ground
+    uniqueID: 3639018787
+    locked: 0
+  - name: Ground_Front
+    uniqueID: 652507745
+    locked: 0
+  - name: Trap
+    uniqueID: 3586265027
+    locked: 0
+  - name: MapItem
+    uniqueID: 2801011753
+    locked: 0
+  - name: Enemy
+    uniqueID: 4042345903
+    locked: 0
+  - name: NPC
+    uniqueID: 3318945403
+    locked: 0
+  - name: Player
+    uniqueID: 4093634059
+    locked: 0
+  - name: Map Check
+    uniqueID: 2600864895
+    locked: 0
