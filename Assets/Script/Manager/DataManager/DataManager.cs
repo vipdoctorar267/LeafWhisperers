@@ -10,7 +10,10 @@ public class DataManager : MonoBehaviour
     public InventoryData _inventoryData;
     public ShopData _shopData;
     public CoinData _coinData;
+    public TutorialData _tutorialData;
     public TeleportData _teleportData;
+    
+    //----------------------------------------
     public AudioSettings _audioSetting; // Thêm biến này để chứa dữ liệu âm thanh
 
     private void Awake()
@@ -32,6 +35,7 @@ public class DataManager : MonoBehaviour
         LoadShopData();
         LoadCoinData();
         LoadTeleportData();
+        LoadTutorialData();
         LoadAudioSettings(); // Đảm bảo gọi phương thức này để tải dữ liệu âm thanh
     }
 
@@ -76,6 +80,9 @@ public class DataManager : MonoBehaviour
 
     public void SaveTeleportData() { SaveData(_teleportData, "_teleportData.json"); }
     public void LoadTeleportData() { _teleportData = LoadData<TeleportData>("_teleportData.json"); }
+
+    public void SaveTutorialData() { SaveData(_tutorialData, "_tutorialData.json"); }
+    public void LoadTutorialData() { _tutorialData = LoadData<TutorialData>("_tutorialData.json"); }
 
     // Phương thức lưu và tải dữ liệu âm thanh
     public void SaveAudioSettings() { SaveData(_audioSetting, "_audioSettings.json"); }

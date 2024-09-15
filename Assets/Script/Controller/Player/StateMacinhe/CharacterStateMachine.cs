@@ -100,8 +100,6 @@ public class CharacterStateMachine : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = customGravityScale; // Đặt trọng lực tùy chỉnh cho Rigidbody2D
         PlayerCollider = GetComponent<CapsuleCollider2D>();
-        //touchingCheck = GetComponentInChildren<Collider2D>();
-        //wallCheck = GetComponentInChildren<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         attack01Area.enabled = false;
 
@@ -520,6 +518,11 @@ public class CharacterStateMachine : MonoBehaviour
             else if (CurrentTutorialState == TutorialState.Dash)
             {
                 CurrentTutorialState = TutorialState.Attack;
+
+            }
+            else if (CurrentTutorialState == TutorialState.Attack)
+            {
+                CompleteTutorial();
 
             }
             isNextAllowed = false;  // Khóa lại sau khi chuyển bước
