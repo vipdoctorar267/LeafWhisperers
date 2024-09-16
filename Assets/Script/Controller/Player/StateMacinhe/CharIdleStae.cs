@@ -6,7 +6,7 @@ public class CharIdleState : CharacterState
 
     public override void Enter()
     {
-        _character.rb.gravityScale = 0;
+        if(_character.isBodyGrounded) _character.rb.gravityScale = 0;
         _character.rb.velocity = Vector2.zero;
         _character.isIdle = true;
         //_character.animManager.TriggerIdle();

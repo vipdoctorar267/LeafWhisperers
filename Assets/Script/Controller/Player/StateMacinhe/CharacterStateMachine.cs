@@ -24,9 +24,13 @@ public class CharacterStateMachine : MonoBehaviour
 
     public Rigidbody2D rb { get; private set; }
     public CapsuleCollider2D PlayerCollider { get; private set; }
+    public Transform groundCheckPoint;  // Điểm kiểm tra dưới chân nhân vật
+    public float groundCheckDistance = 0.5f;  // Khoảng cách từ nhân vật đến mặt đất
     public Collider2D touchingCheck;
     public Collider2D wallCheck;
     public Collider2D attack01Area;
+    public Collider2D attack02Area;
+    public Collider2D attack03Area;
     public Transform _bodyShadow;
     private PlayerManager _playerManager;
     public SpriteRenderer spriteRenderer { get; private set; }
@@ -36,7 +40,7 @@ public class CharacterStateMachine : MonoBehaviour
     private Transform playerAvatarTransform;
     //---------------------------------------------------------------------
 
-    public float attackMoveDistance = 1f;
+    public float attackMoveDistance = 2f;
     //---------------------------------------------------------------------
     public int jumpCount = 0; // Biến đếm số lần nhảy
     private int maxJumpCount = 3;
@@ -110,6 +114,8 @@ public class CharacterStateMachine : MonoBehaviour
         PlayerCollider = GetComponent<CapsuleCollider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         attack01Area.enabled = false;
+        attack02Area.enabled = false;
+        attack03Area.enabled = false;
 
         animManager = GetComponent<CharAnimManager>();
 
@@ -144,14 +150,15 @@ public class CharacterStateMachine : MonoBehaviour
     private void FixedUpdate()
     {
         _currentState?.Update();
-        
+
+        HandleAttackState();
         FallCheck();
         GroundCheck();
         WallCheck();
         DashTimer();
         Direction();
         JumpAnim();
-
+        AttackMove();
         NextTutorialStep();
         if (CurrentTutorialState != TutorialState.None)
         {
@@ -163,8 +170,9 @@ public class CharacterStateMachine : MonoBehaviour
         JumpInput();
         DashInput();
         AttackInput();
+        if (Input.GetKeyDown(KeyCode.G)) Attack01();
        
-        
+
         GetDmg();
     }
     public void SetState(CharacterState newState)
@@ -185,14 +193,20 @@ public class CharacterStateMachine : MonoBehaviour
     {
         wallCheck.enabled = true; // Bật lại Collider sau khi nhảy khỏi tường
     }
+
+   /* [HideInInspector]*/public bool isBodyGrounded;
     private void GroundCheck()
     {
-        isGround = touchingCheck.IsTouchingLayers(groundLayer);
+        // Tạo một raycast từ vị trí groundCheckPoint xuống với khoảng cách groundCheckDistance
+        RaycastHit2D hit = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckDistance, groundLayer);
+        Debug.DrawRay(groundCheckPoint.position, Vector2.down * groundCheckDistance, Color.red);
+        isGround = hit.collider != null;
+        isBodyGrounded = touchingCheck.IsTouchingLayers(groundLayer);
+
         if (isGround)
         {
-            ResetJump(); // Đặt lại số lần nhảy khi chạm đất
+            ResetJump();  // Đặt lại số lần nhảy khi nhân vật chạm đất
         }
-
     }
     private void WallCheck()
     {
@@ -395,46 +409,112 @@ public class CharacterStateMachine : MonoBehaviour
     }
 
     //-----------------------------------------------------------------------------------
+    public void HandleAttackState()
+    {
+
+    }
     public bool allowAttack01=true;
     public void AttackInput()
     {
-        if (isAttack || isDash || isClimbing ||onDMG|| !allowAttack01) return; 
-        // Gọi hàm Attack01() khi nhấn chuột trái
-        if (Input.GetMouseButtonDown(0)&&isGround && !isAttack)
+        // Ngăn không cho tấn công khi đang thực hiện các hành động khác
+        if (isAttack || isDash || isClimbing || onDMG || !allowAttack01) return;
+
+        // Gọi đòn tấn công khi nhấn chuột trái
+        if (Input.GetMouseButtonDown(0) && isGround && !isAttack)
         {
-            if (allowAttack01)
+            if (allowAttack01 || allowAttack02 || allowAttack03)
             {
+                // Bắt đầu hoặc tiếp tục combo attack
                 SetState(AttackState);
             }
-           
         }
     }
+    private bool isAT1 =false,isAT2 = false, isAT3 = false;
+    private void AttackMove()
+    {
+        if (isAT1) { rb.velocity = new Vector2(attackMoveDistance * direction, 0); }
+        if (isAT2) { Invoke("Attack02Move", 8f / 60f); }
+        if (isAT3) { rb.velocity = new Vector2(1.2f * attackMoveDistance * direction, 0); }
+    }
+     private void Attack02Move()
+    {
+        rb.velocity = new Vector2(1.2f*dashStrength * direction, 0);
+    }
+
+
     public void Attack01()
     {
         if (isAttack || isDash || isClimbing || onDMG || !allowAttack01) return;
         allowAttack01 = false;
         SetAnimState(CharFxState.Attack01);
-        // Di chuyển nhân vật tiến lên trước
-        rb.velocity = new Vector2(attackMoveDistance * direction, rb.velocity.y);
-
-        
+        isAT1 = true;
         // Bật Collider của Attack01Area
 
         attack01Area.transform.localScale = new Vector3(direction, 1, 1);
-        attack01Area.transform.localPosition = new Vector2(Mathf.Abs(attack01Area.transform.localPosition.x) * direction, attack01Area.transform.localPosition.y);
+        attack01Area.transform.localPosition = 
+            new Vector2(Mathf.Abs(attack01Area.transform.localPosition.x) * direction, attack01Area.transform.localPosition.y);
         attack01Area.enabled = true;
         Debug.Log("Attack01");
         // Tắt Collider sau khi tấn công
-        Invoke("DisableAttackCollider", 11f/60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
+        Invoke("DisableAttack01Collider", 11f/60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
     }
     
+    public bool allowAttack02 = false;
+    public void Attack02()
+    {
+        // Kiểm tra các điều kiện để ngăn không thực hiện đòn tấn công
+        if (isAttack || isDash || isClimbing || onDMG || !allowAttack02) return;
+        allowAttack02 = false;
+        SetAnimState(CharFxState.Attack02);
+        isAT2 = true;
+        // Bật Collider của Attack02Area
+        attack02Area.transform.localScale = new Vector3(direction, 1, 1);
+        attack02Area.transform.localPosition =
+            new Vector2(Mathf.Abs(attack01Area.transform.localPosition.x) * direction, attack02Area.transform.localPosition.y);
+        attack02Area.enabled = true;
+        Debug.Log("Attack02");
+        // Tắt Collider sau khi tấn công, đảm bảo va chạm xảy ra
+        Invoke("DisableAttack02Collider", 11f / 60f); // Đợi khoảng thời gian dựa trên animation frame
+    }
 
-    void DisableAttackCollider()
+
+    public bool allowAttack03 = false;
+    public void Attack03()
+    {
+        if (isAttack || isDash || isClimbing || onDMG || !allowAttack03) return;
+        allowAttack03 = false;
+        SetAnimState(CharFxState.Attack03);
+        isAT3 = true;
+        // Bật Collider của Attack01Area
+        attack03Area.transform.localScale = new Vector3(direction, 1, 1);
+        attack03Area.transform.localPosition =
+            new Vector2(Mathf.Abs(attack01Area.transform.localPosition.x) * direction, attack03Area.transform.localPosition.y);
+        attack03Area.enabled = true;
+        Debug.Log("Attack03");
+        // Tắt Collider sau khi tấn công
+        Invoke("DisableAttack03Collider", 11f / 60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
+    }
+    void DisableAttack01Collider()
     {
         attack01Area.enabled = false;
-        rb.velocity = new Vector2(0, rb.velocity.y);
-       
+        rb.velocity = Vector2.zero;
+        isAT1 = false;
+
     }
+    void DisableAttack02Collider()
+    {
+        attack02Area.enabled = false;
+        rb.velocity = Vector2.zero;
+        isAT2 = false;
+
+    }
+    void DisableAttack03Collider()
+    {
+        attack03Area.enabled = false;
+        rb.velocity = Vector2.zero;
+        isAT3 = false;
+    }
+
 
 
     //-----------------------------------------------------------------------------------------------
