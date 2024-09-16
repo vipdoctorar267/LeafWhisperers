@@ -28,7 +28,9 @@ public class CharacterStateMachine : MonoBehaviour
     public Collider2D wallCheck;
     public Collider2D attack01Area;
     public Transform _bodyShadow;
+    private PlayerManager _playerManager;
     public SpriteRenderer spriteRenderer { get; private set; }
+
 
     public CharAnimManager animManager;
     private Transform playerAvatarTransform;
@@ -59,6 +61,7 @@ public class CharacterStateMachine : MonoBehaviour
     public bool isWalk;
     public bool isRunning;
     public bool isJump;
+    public bool isFall;
     public bool isSpace;
     public bool isDash;
     public bool isAttack;
@@ -79,6 +82,8 @@ public class CharacterStateMachine : MonoBehaviour
         Run,
         Jump,
         Attack01,
+        Attack02,
+        Attack03,
         Climb,
         Dash,
         Fall,
@@ -97,6 +102,9 @@ public class CharacterStateMachine : MonoBehaviour
     }
     private void Start()
     {
+        _playerManager = FindAnyObjectByType<PlayerManager>();
+        Debug.Log("PlPlayerManager :" + _playerManager._playerData._currentHealth);
+
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = customGravityScale; // Đặt trọng lực tùy chỉnh cho Rigidbody2D
         PlayerCollider = GetComponent<CapsuleCollider2D>();
@@ -154,7 +162,7 @@ public class CharacterStateMachine : MonoBehaviour
         MoveInput();
         JumpInput();
         DashInput();
-        Attack01Input();
+        AttackInput();
        
         
         GetDmg();
@@ -190,7 +198,7 @@ public class CharacterStateMachine : MonoBehaviour
     {
         isTouchingLeftWall = wallCheck.IsTouchingLayers(leftWallLayer) && Input.GetKey(KeyCode.D);
         isTouchingRightWall = wallCheck.IsTouchingLayers(rightWallLayer) && Input.GetKey(KeyCode.A);
-        isClimbing = isTouchingLeftWall || isTouchingRightWall;
+        isClimbing = (isTouchingLeftWall || isTouchingRightWall) && _playerManager._playerData._currentstamina>0;
         //Debug.Log("isClimbing" + isClimbing);
         if (isClimbing)
         {
@@ -226,7 +234,7 @@ public class CharacterStateMachine : MonoBehaviour
         {
             bool moveLeft = Input.GetKey(KeyCode.A);
             bool moveRight = Input.GetKey(KeyCode.D);
-            isRunning = Input.GetKey(KeyCode.LeftShift) && Mathf.Abs(Input.GetAxis("Horizontal")) > runThreshold;
+            isRunning = Input.GetKey(KeyCode.LeftShift)&& _playerManager._playerData._currentstamina > 10 && Mathf.Abs(Input.GetAxis("Horizontal")) > runThreshold;
             moveInput = moveLeft ? -1 : (moveRight ? 1 : 0);
         }
         if (!isClimbing && !isDash && !isAttack  )
@@ -347,7 +355,7 @@ public class CharacterStateMachine : MonoBehaviour
     }
     public void DashInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && allowDash)
+        if (Input.GetKeyDown(KeyCode.LeftControl) && allowDash && _playerManager._playerData._currentstamina >= 15)
         {
             SetState(DashState);
         }
@@ -387,33 +395,37 @@ public class CharacterStateMachine : MonoBehaviour
     }
 
     //-----------------------------------------------------------------------------------
-    public void Attack01Input()
+    public bool allowAttack01=true;
+    public void AttackInput()
     {
-        if (isAttack || isDash || isClimbing ||onDMG) return; 
+        if (isAttack || isDash || isClimbing ||onDMG|| !allowAttack01) return; 
         // Gọi hàm Attack01() khi nhấn chuột trái
-        if (Input.GetMouseButtonDown(0)&&isGround)
+        if (Input.GetMouseButtonDown(0)&&isGround && !isAttack)
         {
-            SetState(AttackState);
+            if (allowAttack01)
+            {
+                SetState(AttackState);
+            }
+           
         }
     }
     public void Attack01()
     {
+        if (isAttack || isDash || isClimbing || onDMG || !allowAttack01) return;
+        allowAttack01 = false;
+        SetAnimState(CharFxState.Attack01);
         // Di chuyển nhân vật tiến lên trước
         rb.velocity = new Vector2(attackMoveDistance * direction, rb.velocity.y);
-       
 
+        
         // Bật Collider của Attack01Area
 
         attack01Area.transform.localScale = new Vector3(direction, 1, 1);
         attack01Area.transform.localPosition = new Vector2(Mathf.Abs(attack01Area.transform.localPosition.x) * direction, attack01Area.transform.localPosition.y);
         attack01Area.enabled = true;
         Debug.Log("Attack01");
-
-        // Collider sẽ va chạm với Enemy và Enemy sẽ tự xử lý việc nhận damage dựa trên tag của collider
-        // Không cần xử lý gì thêm ở đây, chỉ bật collider lên và để OnTriggerEnter2D của Enemy xử lý
-
         // Tắt Collider sau khi tấn công
-        Invoke("DisableAttackCollider", 15f/60f); // Đợi một chút trước khi tắt để đảm bảo va chạm xảy ra
+        Invoke("DisableAttackCollider", 11f/60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
     }
     
 
@@ -457,7 +469,7 @@ public class CharacterStateMachine : MonoBehaviour
         if (isMoveUnlocked) MoveInput();
         if (isJumpUnlocked) JumpInput();
         if (isDashUnlocked) DashInput();
-        if (isAttackUnlocked) Attack01Input();
+        if (isAttackUnlocked) AttackInput();
 
         // Switch case để xử lý các bước hướng dẫn hiện tại
         switch (CurrentTutorialState)

@@ -8,7 +8,7 @@ public class CharFallState : CharacterState
 
     public override void Enter()
     {
-        
+        _character.isFall = true;
         Debug.Log("<<<<<------------------Fall------------------->>>>>");
     }
 
@@ -31,6 +31,6 @@ public class CharFallState : CharacterState
 
     public override void Exit()
     {
-        
+        _character.isFall = false;
     }
 }

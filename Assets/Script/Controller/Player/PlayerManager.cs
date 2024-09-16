@@ -42,8 +42,7 @@ public class PlayerManager : MonoBehaviour
     private float holdTimer = 0f;
     private bool isKeyHeld = false;
 
-
-    void Start()
+    private void Awake()
     {
         _UIManager = FindObjectOfType<UIManager>();
         _charStateMachine = FindObjectOfType<CharacterStateMachine>();
@@ -53,6 +52,10 @@ public class PlayerManager : MonoBehaviour
         // Tải dữ liệu người chơi nếu có
         LoadCoinData();
         LoadPlayerData();
+    }
+    void Start()
+    {
+       
 
         _coinTxt.text = $" {_coinData._coin}";
 
@@ -85,21 +88,39 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    private bool hasDrainedStamina = false;
+
     void FixedUpdate()
     {
         HpValueCtrl();
         MpValueCtrl();
+        StaminaValueCtrl();
+
+
+        if(_UIManager.currentState == UIManager.PanelState.InGUI)
+        {
+            if (_charStateMachine.isIdle || _charStateMachine.isWalk || _charStateMachine.isFall) RegenerateStamina(5f);
+            if (_charStateMachine.isClimbing) DrainStaminaOverTime(2f);
+            if (_charStateMachine.isRunning) DrainStaminaOverTime(10f);
+            if (_charStateMachine.isDash)
+            {
+                if (!hasDrainedStamina) { DrainStaminaOnce(15); hasDrainedStamina = true; }
+            }
+            else hasDrainedStamina = false;
+        }
+        
+
 
         HoldCtrl(KeyCode.R,1.5f, HealWihtMp);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            PlayerTakeDamage(200);
+            PlayerTakeDamage(70);
             Debug.Log("CurrentHealth: " + _playerData._currentHealth);
             SavePlayerData(); // Lưu dữ liệu khi người chơi nhận sát thương
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             _playerData._currentHealth = _playerData._maxHealth; 
             Debug.Log("CurrentHealth: " + _playerData._currentHealth);
@@ -316,8 +337,70 @@ public class PlayerManager : MonoBehaviour
         _invenMnTxt.text = _playerData._currentMana + "/" + _playerData._maxMana;
     }
 
+    public void StaminaValueCtrl()
+    {
+        if (_playerData._currentstamina >= _playerData._maxstamina)
+            _playerData._currentstamina = _playerData._maxstamina;
+
+        // Cập nhật giá trị thanh Stamina
+        _staminaSlider.value = _playerData._currentstamina;
+        _invenStaminaSlider.value = _playerData._currentstamina;
+        _invenStminTxt.text = _playerData._currentstamina + "/" + _playerData._maxstamina;
+    }
+    //------------------------------------------------------------------------------
+    private float staminaRegenBuffer = 0f;
+   
+
+    public void RegenerateStamina(float regenRate)
+    {
+        // Hồi Stamina nếu chưa đạt đến tối đa
+        if (_playerData._currentstamina < _playerData._maxstamina)
+        {
+            staminaRegenBuffer += regenRate * Time.deltaTime;
+
+            // Khi buffer đạt ít nhất 1, cộng số nguyên vào stamina
+            if (staminaRegenBuffer >= 1f)
+            {
+                int staminaToAdd = Mathf.FloorToInt(staminaRegenBuffer);
+                _playerData._currentstamina += staminaToAdd;
+                staminaRegenBuffer -= staminaToAdd;
+
+                // Đảm bảo không vượt quá giới hạn
+                _playerData._currentstamina = Mathf.Min(_playerData._currentstamina, _playerData._maxstamina);
+            }
+        }
+    }
+
+    private float staminaDrainBuffer = 0f;
+    public void DrainStaminaOverTime(float drainRate)
+    {
+        // Trừ Stamina nếu vẫn còn
+        if (_playerData._currentstamina > 0)
+        {
+            staminaDrainBuffer += drainRate * Time.deltaTime;
+
+            // Khi buffer đạt ít nhất 1, trừ số nguyên khỏi stamina
+            if (staminaDrainBuffer >= 1f)
+            {
+                int staminaToDrain = Mathf.FloorToInt(staminaDrainBuffer);
+                _playerData._currentstamina -= staminaToDrain;
+                staminaDrainBuffer -= staminaToDrain;
+
+                // Đảm bảo không xuống dưới 0
+                _playerData._currentstamina = Mathf.Max(_playerData._currentstamina, 0);
+   
+            }
+        }
+    }
 
 
+    public void DrainStaminaOnce(int staminaCost)
+    {
+        // Trừ Stamina ngay lập tức
+        _playerData._currentstamina -= staminaCost;
+        _playerData._currentstamina = Mathf.Max(_playerData._currentstamina, 0);
+       
+    }
 
     //-------------------------------------------------------------------------------
     public void SaveCoinData()

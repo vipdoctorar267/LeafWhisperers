@@ -46,6 +46,11 @@ public class PlayerTutorial : MonoBehaviour
             _KnightCap.SetActive(false);
             _Block.SetActive(true);
             _TutKnightCap.SetActive(true);
+        }else
+        {
+            _KnightCap.SetActive(true);
+            _TutKnightCap.SetActive(false);
+            _Block.SetActive(false);
         }
         if (_characterStateMachine == null)
         {
@@ -118,9 +123,7 @@ public class PlayerTutorial : MonoBehaviour
         SaveTutorialData();
         EndTutorial();
         yield return new WaitForSeconds(3f);
-        _KnightCap.SetActive(true);
-        _TutKnightCap.SetActive(false);
-        _Block.SetActive(false);
+        
     }
 
     void EndTutorial()

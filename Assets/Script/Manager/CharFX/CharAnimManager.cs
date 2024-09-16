@@ -38,6 +38,12 @@ public class CharAnimManager : MonoBehaviour
             case CharacterStateMachine.CharFxState.Attack01:
                 animator.SetTrigger("Attack01");
                 break;
+            case CharacterStateMachine.CharFxState.Attack02:
+                animator.SetTrigger("Attack02");
+                break;
+            case CharacterStateMachine.CharFxState.Attack03:
+                animator.SetTrigger("Attack03");
+                break;
             case CharacterStateMachine.CharFxState.Climb:
                 animator.Play("Climb");
                 break;

@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         Setting
     }
 
-    private PanelState currentState;
+    public PanelState currentState;
 
     private void Start()
     {
@@ -122,6 +122,7 @@ public class UIManager : MonoBehaviour
         // Chỉ thực hiện logic dừng đối tượng khi không phải là InGUI
         SetGameObjectsActive(state == PanelState.InGUI, "Enemy");
         SetGameObjectsActive(state == PanelState.InGUI, "Player");
+
     }
     //---------------------------------------------------------------------
     public void OpenShopPanel()

@@ -47,6 +47,8 @@ public class InGameAudioManager : MonoBehaviour
         _charAudioClipDict[CharacterStateMachine.CharFxState.Run] = GetClipData("CharRunClip");
         _charAudioClipDict[CharacterStateMachine.CharFxState.Jump] = GetClipData("CharJumpClip");
         _charAudioClipDict[CharacterStateMachine.CharFxState.Attack01] = GetClipData("CharAttackClip");
+        _charAudioClipDict[CharacterStateMachine.CharFxState.Attack02] = GetClipData("CharAttackClip");
+        _charAudioClipDict[CharacterStateMachine.CharFxState.Attack03] = GetClipData("CharAttackClip");
         _charAudioClipDict[CharacterStateMachine.CharFxState.Dash] = GetClipData("CharDashClip");
         _charAudioClipDict[CharacterStateMachine.CharFxState.OnDMG] = GetClipData("CharOnDMGClip");
         _charAudioClipDict[CharacterStateMachine.CharFxState.Dead] = GetClipData("CharDeadClip");
