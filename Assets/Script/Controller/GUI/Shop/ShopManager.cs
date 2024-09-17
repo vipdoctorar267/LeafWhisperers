@@ -24,6 +24,8 @@ public class ShopManager : MonoBehaviour
     public InventoryData _inventoryData;
     public CoinData _coinData;
     public ShopData _shopData;
+    private PlayerManager _playerManager;
+
 
     public Button _hpBt;
     public Button _mpBt;
@@ -58,6 +60,7 @@ public class ShopManager : MonoBehaviour
     
     void Start()
     {
+        _playerManager = FindObjectOfType<PlayerManager>();
         _dataManager = FindObjectOfType<DataManager>();
         _inventoryManager = FindObjectOfType<InventoryManager>();
         LoadShopData();
@@ -166,6 +169,7 @@ public class ShopManager : MonoBehaviour
         SaveCoinData();
         SaveInventoryData();
         _coinTxt.text = $"{_coinData._coin}"; // Cập nhật số tiền sau khi mua
+        _playerManager._coinTxt.text = $"{_coinData._coin}";
     }
 
     public void OnButtonClick(Button button)

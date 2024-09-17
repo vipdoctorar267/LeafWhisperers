@@ -29,7 +29,7 @@ public class CharAttackState : CharacterState
             _character.Attack01();
             _character.isAttack = true;
             ChangeState();  
-            yield return new WaitForSeconds(11f / 60f); 
+            yield return new WaitForSeconds(12f / 60f); 
             yield return new WaitForSeconds(0.1f);  
             _character.isAttack = false;
             _character.allowAttack02 = true;
@@ -43,7 +43,7 @@ public class CharAttackState : CharacterState
                     _character.Attack02();
                     _character.isAttack = true;
                     ChangeState();  
-                    yield return new WaitForSeconds(11f / 60f); 
+                    yield return new WaitForSeconds(12f / 60f); 
                     yield return new WaitForSeconds(0.1f);
                     _character.isAttack = false;
                     _character.allowAttack03 = true;
@@ -57,7 +57,7 @@ public class CharAttackState : CharacterState
                             _character.Attack03();
                             _character.isAttack = true;
                             ChangeState();  
-                            yield return new WaitForSeconds(11f / 60f); 
+                            yield return new WaitForSeconds(12f / 60f); 
                             yield return new WaitForSeconds(0.1f);
                             _character.isAttack = false;
                             _character.allowAttack03 = false; 

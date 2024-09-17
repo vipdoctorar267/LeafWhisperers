@@ -8,6 +8,7 @@ public class Revive : MonoBehaviour
     private TeleportController _teleCtrl;
     private CharacterStateMachine _charStateMachine;
     private PlayerManager _playerManager;
+    private DataManager _dataManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Revive : MonoBehaviour
         _teleCtrl = FindObjectOfType<TeleportController>();
         _charStateMachine = FindObjectOfType<CharacterStateMachine>();
         _playerManager = FindObjectOfType<PlayerManager>();
+        _dataManager = FindObjectOfType<DataManager>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,8 @@ public class Revive : MonoBehaviour
         _teleCtrl.TeleportToLastPoint();
         _playerManager._playerData._currentHealth = (int)(_playerManager._playerData._maxHealth * 0.3f);
         _charStateMachine.isDead = false;
+        _dataManager.SaveInventoryData();
+        _playerManager.SaveCoinData();
         _playerManager.SavePlayerData();
         _UIManager.SetPanelState(UIManager.PanelState.InGUI);
 

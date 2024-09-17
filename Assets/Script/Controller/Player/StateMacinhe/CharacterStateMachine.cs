@@ -151,7 +151,6 @@ public class CharacterStateMachine : MonoBehaviour
     {
         _currentState?.Update();
 
-        HandleAttackState();
         FallCheck();
         GroundCheck();
         WallCheck();
@@ -162,7 +161,6 @@ public class CharacterStateMachine : MonoBehaviour
         NextTutorialStep();
         if (CurrentTutorialState != TutorialState.None)
         {
-            
             HandleTutorial();
             return;
         }
@@ -409,10 +407,7 @@ public class CharacterStateMachine : MonoBehaviour
     }
 
     //-----------------------------------------------------------------------------------
-    public void HandleAttackState()
-    {
-
-    }
+    
     public bool allowAttack01=true;
     public void AttackInput()
     {
@@ -429,7 +424,7 @@ public class CharacterStateMachine : MonoBehaviour
             }
         }
     }
-    private bool isAT1 =false,isAT2 = false, isAT3 = false;
+    [HideInInspector] public bool isAT1 =false,isAT2 = false, isAT3 = false;
     private void AttackMove()
     {
         if (isAT1) { rb.velocity = new Vector2(attackMoveDistance * direction, 0); }
@@ -456,7 +451,7 @@ public class CharacterStateMachine : MonoBehaviour
         attack01Area.enabled = true;
         Debug.Log("Attack01");
         // Tắt Collider sau khi tấn công
-        Invoke("DisableAttack01Collider", 11f/60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
+        Invoke("DisableAttack01Collider", 12f/60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
     }
     
     public bool allowAttack02 = false;
@@ -474,7 +469,7 @@ public class CharacterStateMachine : MonoBehaviour
         attack02Area.enabled = true;
         Debug.Log("Attack02");
         // Tắt Collider sau khi tấn công, đảm bảo va chạm xảy ra
-        Invoke("DisableAttack02Collider", 11f / 60f); // Đợi khoảng thời gian dựa trên animation frame
+        Invoke("DisableAttack02Collider", 12f / 60f); // Đợi khoảng thời gian dựa trên animation frame
     }
 
 
@@ -492,26 +487,28 @@ public class CharacterStateMachine : MonoBehaviour
         attack03Area.enabled = true;
         Debug.Log("Attack03");
         // Tắt Collider sau khi tấn công
-        Invoke("DisableAttack03Collider", 11f / 60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
+        Invoke("DisableAttack03Collider", 12f / 60f); // Đợi trước khi tắt, đảm bảo va chạm xảy ra
     }
     void DisableAttack01Collider()
     {
-        attack01Area.enabled = false;
+        
         rb.velocity = Vector2.zero;
+        attack01Area.enabled = false;
         isAT1 = false;
 
     }
     void DisableAttack02Collider()
     {
-        attack02Area.enabled = false;
         rb.velocity = Vector2.zero;
+        attack02Area.enabled = false;
         isAT2 = false;
 
     }
     void DisableAttack03Collider()
     {
-        attack03Area.enabled = false;
+        
         rb.velocity = Vector2.zero;
+        attack03Area.enabled = false;
         isAT3 = false;
     }
 

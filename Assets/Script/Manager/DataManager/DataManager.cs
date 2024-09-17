@@ -66,8 +66,8 @@ public class DataManager : MonoBehaviour
 
     //-------------------------------------------------------------
 
-    public void SavePlayerData() { SaveData(_playerData, "_playerData.json"); }
-    public void LoadPlayerData() { _playerData = LoadData<PlayerData>("_playerData.json"); }
+    public void SavePlayerData() { SaveData(_playerData, "_playerManager.json"); }
+    public void LoadPlayerData() { _playerData = LoadData<PlayerData>("_playerManager.json"); }
 
     public void SaveInventoryData() { SaveData(_inventoryData, "_inventoryData.json"); }
     public void LoadInventoryData() { _inventoryData = LoadData<InventoryData>("_inventoryData.json"); }

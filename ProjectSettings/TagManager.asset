@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Attack01Area
   - SoundRange
+  - Attack02Area
+  - Attack03Area
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,26 @@ public class JumpSpiderBody : MonoBehaviour
                 jumpSpider.EnemyOnAttack("Attack01");
             }
         }
+        if (other.CompareTag("Attack02Area"))
+        {
+            // Khi phát hiện người chơi, có thể thực hiện các hành động như bắt đầu đuổi theo
+            JumpSpider jumpSpider = GetComponentInParent<JumpSpider>();
+            if (jumpSpider != null)
+            {
+                Debug.Log("enemy take dmg");
+                jumpSpider.EnemyOnAttack("Attack02");
+            }
+        }
+        if (other.CompareTag("Attack03Area"))
+        {
+            // Khi phát hiện người chơi, có thể thực hiện các hành động như bắt đầu đuổi theo
+            JumpSpider jumpSpider = GetComponentInParent<JumpSpider>();
+            if (jumpSpider != null)
+            {
+                Debug.Log("enemy take dmg");
+                jumpSpider.EnemyOnAttack("Attack03");
+            }
+        }
         if (other.CompareTag("Player"))
         {
             // Khi phát hiện người chơi, có thể thực hiện các hành động như bắt đầu đuổi theo

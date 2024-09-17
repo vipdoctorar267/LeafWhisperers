@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +15,11 @@ public class TeleportData
 {
     public List<TeleportPointData> teleportPoints = new List<TeleportPointData>();
     public string lastUsedPointId; // Lưu ID của điểm dịch chuyển cuối cùng
+    public int lastSaveCoin;
+    public int lastHpCount;
+    public int lastMpCount;
+    public int lastStmCount;
+
 }
 
 public class TeleportController : MonoBehaviour
@@ -28,13 +32,13 @@ public class TeleportController : MonoBehaviour
     private bool isFirstTouch = true;
     [SerializeField] private string teleportPointId; // ID của điểm dịch chuyển này
     private Animator animator;
-    private DataManager dataManager;
+    private DataManager _dataManager;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        dataManager = FindObjectOfType<DataManager>(); // Tìm đối tượng DataManager trong scene
+        _dataManager = FindObjectOfType<DataManager>(); // Tìm đối tượng DataManager trong scene
 
         // Load trạng thái của điểm dịch chuyển này
         LoadTeleportPointData();
@@ -76,7 +80,11 @@ public class TeleportController : MonoBehaviour
     public void TeleportToLastPoint()
     {
         // Lấy ID của điểm dịch chuyển cuối cùng từ DataManager
-        string lastPointId = dataManager._teleportData.lastUsedPointId;
+        string lastPointId = _dataManager._teleportData.lastUsedPointId;
+        _dataManager._coinData._coin = _dataManager._teleportData.lastSaveCoin;
+        _dataManager._inventoryData._hpCount = _dataManager._teleportData.lastHpCount;
+        _dataManager._inventoryData._mpCount = _dataManager._teleportData.lastMpCount;
+        _dataManager._inventoryData._stmCount = _dataManager._teleportData.lastStmCount;
 
         // Tìm đối tượng TeleportController tương ứng với ID đó
         TeleportController lastTeleportPoint = null;
@@ -108,6 +116,7 @@ public class TeleportController : MonoBehaviour
         }
     }
     //---------------------------------------------------------------------------------------
+    
     private void SaveTeleportPointData()
     {
         TeleportPointData pointData = new TeleportPointData
@@ -117,7 +126,7 @@ public class TeleportController : MonoBehaviour
             // Không cần lưu position nữa
         };
 
-        TeleportData data = dataManager._teleportData;
+        TeleportData data = _dataManager._teleportData;
         TeleportPointData existingPoint = data.teleportPoints.Find(p => p.id == teleportPointId);
         if (existingPoint != null)
         {
@@ -128,14 +137,17 @@ public class TeleportController : MonoBehaviour
         {
             data.teleportPoints.Add(pointData);
         }
-
+        _dataManager._teleportData.lastSaveCoin = _dataManager._coinData._coin;
+        _dataManager._teleportData.lastHpCount = _dataManager._inventoryData._hpCount;
+        _dataManager._teleportData.lastMpCount = _dataManager._inventoryData._mpCount;
+        _dataManager._teleportData.lastStmCount = _dataManager._inventoryData._stmCount;
         data.lastUsedPointId = teleportPointId;
-        dataManager.SaveTeleportData(); // Lưu vào DataManager
+        _dataManager.SaveTeleportData(); // Lưu vào DataManager
     }
 
     private void LoadTeleportPointData()
     {
-        TeleportData data = dataManager._teleportData;
+        TeleportData data = _dataManager._teleportData;
         TeleportPointData pointData = data.teleportPoints.Find(p => p.id == teleportPointId);
         if (pointData != null)
         {

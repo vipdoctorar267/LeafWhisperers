@@ -38,7 +38,7 @@ public class PlayerManager : MonoBehaviour
     public Text _invenStminTxt;
 
     public Text _coinTxt;
-    //-------------------------
+    //-------------------------         
     private float holdTimer = 0f;
     private bool isKeyHeld = false;
 
@@ -55,8 +55,6 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
-       
-
         _coinTxt.text = $" {_coinData._coin}";
 
         // Khởi tạo các thông số UI
@@ -92,6 +90,7 @@ public class PlayerManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         HpValueCtrl();
         MpValueCtrl();
         StaminaValueCtrl();
@@ -185,6 +184,7 @@ public class PlayerManager : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     public void PlayerTakeDamage(int damage)
     {
+        if (_charStateMachine.isAT2) return;
         if (!_charStateMachine.isDead)
         {
             // Giảm lượng máu của Player dựa trên sát thương nhận được
@@ -223,7 +223,8 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnDamageTaken()
     {
-        // Xử lý logic khi RunSpider nhận sát thương nhưng chưa chết
+
+        // Xử lý logic khi player nhận sát thương nhưng chưa chết
         Debug.Log("player bị tấn công, còn " + _playerData._currentHealth + " HP");
         _charStateMachine.onDMG = true;
     }
@@ -297,13 +298,23 @@ public class PlayerManager : MonoBehaviour
         {
             case "Attack01":
                 // Sát thương của Attack01 là 30% của tấn công người chơi
-                damage = Mathf.FloorToInt(_playerData._attack * 0.3f);
+                damage = Mathf.FloorToInt(_playerData._attack * 0.4f);
                 knockbackForce = 5f; // Giá trị này bạn có thể thay đổi tùy theo logic game
                 knockbackDirection = (enemyPosition - playerPosition).normalized;
                 break;
- 
-            // case "Attack02":
-            //     damage = Mathf.FloorToInt(_playerData._attack * 0.5f);
+
+            case "Attack02":
+                damage = Mathf.FloorToInt(_playerData._attack * 0.5f);
+                knockbackForce = 15f; // Giá trị knockbackForce tương ứng
+                knockbackDirection = (enemyPosition - playerPosition).normalized;
+                break;
+            case "Attack03":
+                damage = Mathf.FloorToInt(_playerData._attack * 0.3f);
+                knockbackForce = 10f; // Giá trị knockbackForce tương ứng
+                knockbackDirection = (enemyPosition - playerPosition).normalized;
+                break;
+            // case "Attack04":
+            //     damage = Mathf.FloorToInt(_playerManager._attack * 0.5f);
             //     knockbackForce = 10f; // Giá trị knockbackForce tương ứng
             //     knockbackDirection = (enemyPosition - playerPosition).normalized;
             //     break;
@@ -428,7 +439,7 @@ public class PlayerManager : MonoBehaviour
         if (_dataManager != null)
         {
             _dataManager.LoadPlayerData();
-            _playerData = _dataManager._playerData; // Cập nhật _playerData với dữ liệu đã tải
+            _playerData = _dataManager._playerData; // Cập nhật _playerManager với dữ liệu đã tải
         }
         if (_playerData == null)
         {
