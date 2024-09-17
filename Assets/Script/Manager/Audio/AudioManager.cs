@@ -32,11 +32,10 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        
-
         // Áp dụng FXGlobalVolume và BGGlobalVolume từ dữ liệu đã load lên hệ thống âm thanh
         InGameAudioManager.Instance.SetFXGlobalVolume(_FxGlobalVolume);
         BackGroundAudioManager.Instance.FirstBgGlobalVolume(_BgGlobalVolume);
+
     }
 
     // Phương thức để cài đặt FXGlobalVolume

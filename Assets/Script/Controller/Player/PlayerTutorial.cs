@@ -33,20 +33,18 @@ public class PlayerTutorial : MonoBehaviour
     public TextMeshProUGUI _tutTxt;
     // Reference đến CharacterStateMachine để quản lý trạng thái tutorial
     private CharacterStateMachine _characterStateMachine;
-    private void Awake()
+   
+    private void Start()
     {
         _dataManager = FindObjectOfType<DataManager>();
         LoadTutorialData();
-    }
-    private void Start()
-    {
-
         if (_tutorialData._1stGame)
         {
             _KnightCap.SetActive(false);
             _Block.SetActive(true);
             _TutKnightCap.SetActive(true);
-        }else
+        }
+        else
         {
             _KnightCap.SetActive(true);
             _TutKnightCap.SetActive(false);
@@ -123,7 +121,9 @@ public class PlayerTutorial : MonoBehaviour
         SaveTutorialData();
         EndTutorial();
         yield return new WaitForSeconds(3f);
-        
+        _KnightCap.SetActive(true);
+        _TutKnightCap.SetActive(false);
+        _Block.SetActive(false);
     }
 
     void EndTutorial()
@@ -151,14 +151,6 @@ public class PlayerTutorial : MonoBehaviour
             _dataManager.LoadTutorialData();
             _tutorialData = _dataManager._tutorialData;
         }
-        if (_tutorialData == null)
-        {
-            _tutorialData = new TutorialData
-            {
-                _1stGame = true
-            };
-            _dataManager._tutorialData = _tutorialData;
-            _dataManager.SaveTutorialData();
-        }
+        
     }
 }

@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
-        _coinTxt.text = $" {_coinData._coin}";
+       
 
         // Khởi tạo các thông số UI
         _healthSlider.interactable = false;
@@ -84,6 +84,7 @@ public class PlayerManager : MonoBehaviour
         _invenStaminaSlider.value = _playerData._currentstamina;
         _invenStminTxt.text = _playerData._currentstamina + "/" + _playerData._maxstamina;
 
+        if (_coinData._coin != null) _coinTxt.text = $" {_coinData._coin}";
     }
 
     private bool hasDrainedStamina = false;

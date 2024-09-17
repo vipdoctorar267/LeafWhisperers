@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
     public GameObject mainMenuPanel; // Panel MainMenu
     public GameObject confirmExitPanel; // Panel xác nhận thoát
     public GameObject settingPanel;
+    public GameObject savePanel;
     public GameObject loadPanel; // Panel tải cảnh
 
     // Enum để quản lý các trạng thái của menu
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
         MainMenu,
         ConfirmExit,
         Settings,
+        Save,
         Loading
     }
 
@@ -31,11 +33,13 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        DataManager.Instance.SetCurrentSlot(DataManager.SaveSlot.None);
         SetMenuState(MenuState.MainMenu);
         mainMenuPanel.SetActive(true);
         confirmExitPanel.SetActive(false);
         settingPanel.SetActive(false);
         loadPanel.SetActive(false);
+        savePanel.SetActive(false);
         // Đăng ký các sự kiện cho các nút
         startButton.onClick.AddListener(() => OnButtonClick(startButton));
         settingButton.onClick.AddListener(() => OnButtonClick(settingButton));
@@ -66,7 +70,7 @@ public class MenuManager : MonoBehaviour
         {
             if (button == startButton)
             {
-                StartGame();
+                SaveGameSelect();
             }
             else if (button == settingButton)
             {
@@ -90,7 +94,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void StartGame()
+    private void SaveGameSelect()
+    {
+        SetMenuState(MenuState.Save);
+    }
+    public void StartGame()
     {
         SetMenuState(MenuState.Loading);
         StartCoroutine(LoadGameScene());
@@ -133,6 +141,7 @@ public class MenuManager : MonoBehaviour
         confirmExitPanel.SetActive(false);
         settingPanel.SetActive(false);
         loadPanel.SetActive(false);
+        savePanel.SetActive(false);
 
         // Hiển thị panel theo trạng thái hiện tại
         switch (newState)
@@ -145,6 +154,9 @@ public class MenuManager : MonoBehaviour
                 break;
             case MenuState.Settings:
                 settingPanel.SetActive(true);
+                break;
+            case MenuState.Save:
+                savePanel.SetActive(true);
                 break;
             case MenuState.Loading:
                 loadPanel.SetActive(true);
