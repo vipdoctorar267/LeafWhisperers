@@ -9,7 +9,7 @@ public class InventoryData
     public int _stmCount;
     public int _hp1 = 100;
     public int _mp1 = 100;
-    public int _stm1 = 100;
+    public int _stm1 = 50;
 }
 
 public class InventoryManager : MonoBehaviour
@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     [HideInInspector] public PotionType _ptType;
-    
+
 
     public Image _itemIBoxImage;
     public Sprite _noneImage;
@@ -56,19 +56,20 @@ public class InventoryManager : MonoBehaviour
         _useBt.onClick.AddListener(() => OnButtonClick(_useBt));
         _hpBt.onClick.AddListener(() => OnButtonClick(_hpBt));
         _mpBt.onClick.AddListener(() => OnButtonClick(_mpBt));
-        
-        
+        _stmBt.onClick.AddListener(() => OnButtonClick(_stmBt));
+
+
         _itemNoteTxt.text = "none item";
     }
 
     void Update()
     {
         ItemInfo();
-        
+
 
     }
 
-    
+
     public void ItemInfo()
     {
         switch (_ptType)
@@ -100,14 +101,20 @@ public class InventoryManager : MonoBehaviour
                 }
                 break;
             case PotionType.Stm:
-                // Áp dụng logic cho Stm
+                if (_itemIBoxImage != null && _stmImage != null)
+                {
+                    _itemIBoxImage.sprite = _stmImage;
+                    _itemCoutTxt.text = _inventoryData._stmCount.ToString();
+                    _itemNoteTxt.text = " Add " + _inventoryData._stm1 + " Stm to Player  ";
+
+                }
                 break;
         }
 
-       
+
     }
 
-     public void UseItem()
+    public void UseItem()
     {
         switch (_ptType)
         {
@@ -134,14 +141,21 @@ public class InventoryManager : MonoBehaviour
                 SaveInventoryData();
                 break;
             case PotionType.Stm:
-                // Áp dụng logic cho Stm
+                LoadPlayerData();
+                //---------------------------------------------
+                _inventoryData._stmCount -= 1;
+                Debug.Log("Remaining HP Count: " + _inventoryData._stmCount);
+                _playerData._currentMana += _inventoryData._stm1;
+                //---------------------------------------------
+                SavePlayerData();
+                SaveInventoryData();
                 break;
         }
-       
+
     }
     public void OnButtonClick(Button button)
     {
-        if(button == _useBt)
+        if (button == _useBt)
         {
             UseItem();
         }
@@ -149,7 +163,7 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.Log("HP Button clicked");
             _ptType = PotionType.Hp;
-           
+
         }
         else if (button == _mpBt)
         {
@@ -157,9 +171,9 @@ public class InventoryManager : MonoBehaviour
             _ptType = PotionType.Mp;
 
         }
-        else
+        else if (button == _stmBt)
         {
-            _ptType = PotionType.None;
+            _ptType = PotionType.Stm;
         }
     }
 
@@ -196,13 +210,13 @@ public class InventoryManager : MonoBehaviour
         {
             _inventoryData = new InventoryData
             {
-            _hpCount = 6,
-            _mpCount = 6,
-            _stmCount = 6,
-            _hp1 = 100,
-            _mp1 = 100,
-            _stm1 = 100
-        };
+                _hpCount = 6,
+                _mpCount = 6,
+                _stmCount = 6,
+                _hp1 = 100,
+                _mp1 = 100,
+                _stm1 = 50
+            };
 
             // Lưu dữ liệu lần đầu tiên
             _dataManager._inventoryData = _inventoryData;

@@ -57,9 +57,12 @@ public class ShopManager : MonoBehaviour
     public Text _itemPriceTxt; // Hiển thị giá của từng loại item
     public Text _totalPriceTxt; // Hiển thị tổng giá sau khi bấm Add
     public Text _coinTxt; // Hiển thị số tiền hiện có
-    
+
+    public GameObject blockBuyPopup;
+
     void Start()
     {
+
         _playerManager = FindObjectOfType<PlayerManager>();
         _dataManager = FindObjectOfType<DataManager>();
         _inventoryManager = FindObjectOfType<InventoryManager>();
@@ -67,6 +70,8 @@ public class ShopManager : MonoBehaviour
         LoadCoinData();
         LoadInventoryData();
         _quantityField.onValueChanged.AddListener(OnValueChanged);
+
+        blockBuyPopup.SetActive(false);
 
         // Gán sự kiện onClick cho các button
         _buyBt.onClick.AddListener(() => OnButtonClick(_buyBt));
@@ -78,11 +83,13 @@ public class ShopManager : MonoBehaviour
 
         _itemNoteTxt.text = "none item";
         _coinTxt.text = $" {_coinData._coin}"; // Hiển thị số tiền hiện có
+
+
     }
 
     void Update()
     {
-        
+
     }
 
     void OnValueChanged(string value)
@@ -153,17 +160,41 @@ public class ShopManager : MonoBehaviour
             case PotionType.Hp:
                 _inventoryData._hpCount += quantity;
                 Debug.Log("Remaining HP Count: " + _inventoryData._hpCount);
-                _coinData._coin -= _shopData._hpPrice * quantity;
+                if ((_coinData._coin - _shopData._hpPrice * quantity) >= 0)
+                {
+                    _coinData._coin -= _shopData._hpPrice * quantity;
+                }
+                else
+                {
+                    blockBuyPopup.SetActive(true);
+                    Debug.Log("K cho");
+                }
                 break;
             case PotionType.Mp:
                 _inventoryData._mpCount += quantity;
                 Debug.Log("Remaining MP Count: " + _inventoryData._mpCount);
-                _coinData._coin -= _shopData._mpPrice * quantity;
+                if ((_coinData._coin - _shopData._mpPrice * quantity) >= 0)
+                {
+                    _coinData._coin -= _shopData._mpPrice * quantity;
+                }
+                else
+                {
+                    blockBuyPopup.SetActive(true);
+                    Debug.Log("K cho");
+                }
                 break;
             case PotionType.Stm:
                 _inventoryData._stmCount += quantity;
                 Debug.Log("Remaining Stamina Count: " + _inventoryData._stmCount);
-                _coinData._coin -= _shopData._stmPrice * quantity;
+                if ((_coinData._coin - _shopData._stmPrice * quantity) >= 0)
+                {
+                    _coinData._coin -= _shopData._stmPrice * quantity;
+                }
+                else
+                {
+                    blockBuyPopup.SetActive(true);
+                    Debug.Log("K cho");
+                }
                 break;
         }
         SaveCoinData();
@@ -293,5 +324,10 @@ public class ShopManager : MonoBehaviour
             _dataManager._coinData = _coinData;
             _dataManager.SaveCoinData();
         }
+    }
+
+    public void buttonCancel()
+    {
+        blockBuyPopup.SetActive(false);
     }
 }

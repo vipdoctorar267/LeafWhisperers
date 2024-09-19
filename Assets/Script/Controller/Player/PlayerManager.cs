@@ -17,6 +17,9 @@ public class PlayerData
     public int _defense;             // Phòng thủ
     public float _maxEquipmentWeight;// Sức nặng trang bị tối đa
     public float _currentEquipmentWeight; // Sức nặng trang bị hiện tại
+    // Thêm vị trí của Player
+    public float _positionX;         // Vị trí X
+    public float _positionY;         // Vị trí Y
 
 }
 
@@ -41,6 +44,7 @@ public class PlayerManager : MonoBehaviour
     //-------------------------         
     private float holdTimer = 0f;
     private bool isKeyHeld = false;
+    public Transform _playerTranform;
 
     private void Awake()
     {
@@ -55,7 +59,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
-       
+        LoadPlayerPosition();
 
         // Khởi tạo các thông số UI
         _healthSlider.interactable = false;
@@ -162,8 +166,23 @@ public class PlayerManager : MonoBehaviour
             holdTimer = 0f;
         }
     }
-    
+    //-------------------------------------------------------------------------------------------
+    public void SavePlayerPosition()
+    {
+        // Lưu vị trí người chơi vào PlayerData
+        _playerData._positionX = _playerTranform.position.x;
+        _playerData._positionY = _playerTranform.position.y;
+       
+        SavePlayerData();
+    }
 
+    public void LoadPlayerPosition()
+    {
+        // Sau khi dữ liệu đã được nạp vào playerData (JSON deserialization hoặc cách bạn đang dùng):
+        _playerTranform.position = new Vector3(_playerData._positionX, _playerData._positionY, 0);
+    }
+
+    //-------------------------------------------------------------------------------------------
     public void HealWihtMp()
     {
         _playerData._currentMana -= 50;
@@ -455,7 +474,10 @@ public class PlayerManager : MonoBehaviour
                 _attack = 200,
                 _defense = 150,
                 _maxEquipmentWeight = 50.0f,
-                _currentEquipmentWeight = 0.0f
+                _currentEquipmentWeight = 0.0f,
+                _positionX = 144,
+                _positionY= 120
+
             };
 
             // Lưu dữ liệu lần đầu tiên

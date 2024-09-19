@@ -215,10 +215,19 @@ public class DataManager : MonoBehaviour
                 _attack = 200,
                 _defense = 150,
                 _maxEquipmentWeight = 50.0f,
-                _currentEquipmentWeight = 0.0f
+                _currentEquipmentWeight = 0.0f,
+                _positionX = 144,
+                _positionY = 120
             };
             _inventoryData = new InventoryData();
-            _shopData = new ShopData();
+            _shopData = new ShopData
+            {
+                _hpPrice = 100,
+                _mpPrice = 100,
+                _stmPrice = 100,
+                _strPrice = 100,
+                _vitPrice = 100
+            };
             _coinData = new CoinData { _coin = 10000 }; // Ví dụ: khởi tạo coin với 10000
             _tutorialData = new TutorialData { _1stGame=true  };
             _teleportData = new TeleportData();

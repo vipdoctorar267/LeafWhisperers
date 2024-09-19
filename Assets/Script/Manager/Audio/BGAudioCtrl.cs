@@ -14,12 +14,7 @@ public class BGAudioCtrl : MonoBehaviour
     private Dictionary<BackGroundAudioManager.BGState, float> _clipVolumeDictionary;
     private Dictionary<BackGroundAudioManager.BGState, bool> _clipLoopDictionary;
 
-    private void Awake()
-    {
-        
-    }
-
-
+    
    
     private void Start()
     {
