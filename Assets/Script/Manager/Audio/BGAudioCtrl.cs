@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BGAudioCtrl : MonoBehaviour
 {
     private AudioSource _audioSource;
-
+    [SerializeField] private string currentSceneName;
     [SerializeField]
     private float fadeDuration = 2f; // Thời gian fade in/out
 
@@ -19,13 +19,17 @@ public class BGAudioCtrl : MonoBehaviour
         
     }
 
+
+   
     private void Start()
     {
+        currentSceneName = SceneManager.GetActiveScene().name;
         _audioSource = GetComponent<AudioSource>();
         LoadAllAudioClips();
         StartCoroutine(PreloadAllAudioClips());
-        string currentSceneName = SceneManager.GetActiveScene().name;
-
+    }
+    private void StartSence()
+    {
         if (currentSceneName == "MainMenu")
         {
             Debug.Log("----------------Start-----------------");
@@ -37,7 +41,6 @@ public class BGAudioCtrl : MonoBehaviour
             StartScene(BackGroundAudioManager.BGState.Village);
         }
     }
-
     // Load tất cả các clip âm thanh và dữ liệu vào từ điển cục bộ
     private void LoadAllAudioClips()
     {
@@ -55,6 +58,7 @@ public class BGAudioCtrl : MonoBehaviour
                 _clipLoopDictionary[state] = clipData.loop;
             }
         }
+        
     }
 
     public void ReloadAllAudioClips()
@@ -79,6 +83,7 @@ public class BGAudioCtrl : MonoBehaviour
                 yield return new WaitForSeconds(clip.length);
             }
         }
+        StartSence();
     }
 
     private float GetAdjustedVolume(BackGroundAudioManager.BGState state)

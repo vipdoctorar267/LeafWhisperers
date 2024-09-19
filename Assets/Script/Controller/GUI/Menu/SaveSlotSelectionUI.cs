@@ -11,6 +11,12 @@ public class SaveSlotSelectionUI : MonoBehaviour
     public Button continueButton; // Nút "Continue Game"
     public Button deleteButton;   // Nút "Delete"
     public Button newGameButton;  // Nút "New Game"
+    [Header (" Image")]
+    public Sprite _DataImage;
+    public Image _slot1BtImg;
+    public Image _slot2BtImg;
+    public Image _slot3BtImg;
+
 
     private DataManager.SaveSlot currentSelectedSlot; // Biến lưu slot đang được chọn
 
