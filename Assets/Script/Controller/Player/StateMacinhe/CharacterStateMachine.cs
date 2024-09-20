@@ -220,6 +220,14 @@ public class CharacterStateMachine : MonoBehaviour
     private void FallCheck()
     {
         if (isJump) return;
+        if (!isWalk && !isRunning && isJump)
+        {
+            // Chuyển động theo trục ngang khi nhảy
+            moveInput = Input.GetKey(KeyCode.A) ? -1 : (Input.GetKey(KeyCode.D) ? 1 : 0);
+            Vector2 moveVelocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+            rb.velocity = moveVelocity;
+            Debug.Log("SpaceMove");
+        }
         if (rb.velocity.y < 0 && !isGround)
         {
             if (_currentState != FallState)
@@ -521,6 +529,7 @@ public class CharacterStateMachine : MonoBehaviour
         Move,        // Hướng dẫn di chuyển (A và D)
         Jump,        // Hướng dẫn nhảy (Space)
         Dash,        // Hướng dẫn Dash (Left Control)
+        Climb,
         Attack       // Hướng dẫn Attack (Chuột trái)
     }
     public TutorialState _currentTutorialState;// inspector check
@@ -577,6 +586,13 @@ public class CharacterStateMachine : MonoBehaviour
                     isNextAllowed = true;
                 }
                 break;
+            case TutorialState.Climb:
+                if (isClimbing)
+                {
+                    Debug.Log("Climb step completed");   
+                    isNextAllowed = true;
+                }
+                break;
 
             case TutorialState.Attack:
                 if (Input.GetMouseButtonDown(0))
@@ -588,8 +604,6 @@ public class CharacterStateMachine : MonoBehaviour
                 break;
         }
     }
-
-
     public void NextTutorialStep()
     {
         if (isNextAllowed && isClick) // Nếu chưa được phép hoặc chưa nhấn nút, không chuyển bước
@@ -605,6 +619,11 @@ public class CharacterStateMachine : MonoBehaviour
 
             }
             else if (CurrentTutorialState == TutorialState.Dash)
+            {
+                CurrentTutorialState = TutorialState.Climb;
+
+            }
+            else if (CurrentTutorialState == TutorialState.Climb)
             {
                 CurrentTutorialState = TutorialState.Attack;
 
