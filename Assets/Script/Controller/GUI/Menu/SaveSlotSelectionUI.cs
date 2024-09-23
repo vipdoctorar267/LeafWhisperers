@@ -44,6 +44,10 @@ public class SaveSlotSelectionUI : MonoBehaviour
         deleteButton.gameObject.SetActive(false);
         newGameButton.gameObject.SetActive(false);
     }
+    private void Update()
+    {
+        SaveSlotUIHandle();
+    }
     private void SaveSlotUIHandle()
     {
         // Cập nhật Slot 1
@@ -129,6 +133,7 @@ public class SaveSlotSelectionUI : MonoBehaviour
         deleteButton.gameObject.SetActive(false);
         newGameButton.gameObject.SetActive(true); // Hiện nút New Game sau khi xóa
         Debug.Log("Deleted data in slot: " + currentSelectedSlot);
+        
     }
 
     private void OnClickNewGame()

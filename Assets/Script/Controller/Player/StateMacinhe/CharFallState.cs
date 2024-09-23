@@ -14,6 +14,7 @@ public class CharFallState : CharacterState
 
     public override void Update()
     {
+        _character.MoveInput();
         if (!_character.isAttack) _character.SetAnimState(CharacterStateMachine.CharFxState.Fall);
 
         if (_character.isGround && !_character.isDash && !_character.onDMG)

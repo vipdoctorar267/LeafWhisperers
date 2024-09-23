@@ -71,6 +71,11 @@ public class UIManager : MonoBehaviour
             //Debug.Log("an M");
             SetPanelState(PanelState.Map);
         }
+        else if (Input.GetKeyDown(KeyCode.J))
+        {
+            //Debug.Log("an M");
+            SetPanelState(PanelState.Shop);
+        }
         // Thêm các phím nhấn khác để hiển thị ShopPanel và MapPanel nếu cần
     }
 
